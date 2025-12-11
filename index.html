@@ -52,10 +52,47 @@
             background-attachment: fixed;
         }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .service-card { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid #334155; transition: transform 0.3s; }
-        .service-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        .usp-box { margin-top: 30px; background: linear-gradient(90deg, #1e293b, #0f172a); padding: 20px; border-left: 4px solid var(--secondary); border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        /* Cập nhật lại service-card để chứa ảnh tràn viền */
+        .service-card { 
+            background: rgba(30, 41, 59, 0.85); 
+            border-radius: 12px; /* Bo góc tròn hơn chút */
+            border: 1px solid #334155; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+            backdrop-filter: blur(5px); 
+            padding: 0; /* QUAN TRỌNG: Bỏ padding để ảnh tràn ra sát mép */
+            overflow: hidden; /* Để ảnh không bị lòi ra khỏi góc bo tròn */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover { 
+            transform: translateY(-8px); 
+            border-color: var(--primary); 
+            background: rgba(30, 41, 59, 1); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
 
+        /* Định dạng ảnh trong card */
+        .service-card-img {
+            width: 100%;
+            height: 180px; /* Chiều cao cố định để các card bằng nhau */
+            object-fit: cover; /* Cắt ảnh tự động để không bị méo */
+            border-bottom: 1px solid #334155;
+        }
+
+        /* Định dạng phần nội dung chữ bên dưới */
+        .service-card-content {
+            padding: 25px; /* Thêm padding lại cho phần chữ */
+            flex-grow: 1; /* Đẩy nội dung xuống đều nhau */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
         /* 3. HISTORY & MILESTONES */
           #history {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(88, 28, 135, 0.8)), url('Developer-Experience-DevEx.webp') center/cover;
@@ -167,27 +204,49 @@
          </div>
      </section>
 
-    <!-- CHECKPOINT 2: PRODUCTS & SERVICES -->
+<!-- CHECKPOINT 2: PRODUCTS & SERVICES -->
     <section id="services">
         <h2>Our Offerings</h2>
         <p class="sub-head">Target Audience: Startups, SMEs, and Enterprise Corporations.</p>
 
         <div class="services-grid">
+            
+            <!-- Card 1: Backend Architecture -->
             <div class="service-card">
-                <h3>Backend Architecture</h3>
-                <p>High-performance server construction ensuring data stability.</p>
-                <small style="color:var(--primary); font-weight:bold; margin-top:10px; display:block;">Delivery: Agile / DevOps</small>
+                <!-- Ảnh minh họa: Server room/Structure -->
+                <img class="service-card-img" src="img10.jpg" alt="Backend Architecture">
+                
+                <div class="service-card-content">
+                    <h3>Backend Architecture</h3>
+                    <p style="flex-grow: 1;">High-performance server construction ensuring data stability and scalability for high-traffic systems.</p>
+                    <small style="color:var(--primary); font-weight:bold; margin-top:15px; display:block; padding-top:15px; border-top:1px solid rgba(255,255,255,0.1);">Delivery: Agile / DevOps</small>
+                </div>
             </div>
+
+            <!-- Card 2: Web App Development -->
             <div class="service-card">
-                <h3>Web App Development</h3>
-                <p>Full-stack web applications tailored to business needs.</p>
-                <small style="color:var(--primary); font-weight:bold; margin-top:10px; display:block;">Delivery: Cloud-SaaS</small>
+                <!-- Ảnh minh họa: Coding/Screen -->
+                <img class="service-card-img" src="web-application-development-process.png" alt="Web App Development">
+                
+                <div class="service-card-content">
+                    <h3>Web App Development</h3>
+                    <p style="flex-grow: 1;">Full-stack web applications tailored to business needs using modern frameworks like React & Node.js.</p>
+                    <small style="color:var(--primary); font-weight:bold; margin-top:15px; display:block; padding-top:15px; border-top:1px solid rgba(255,255,255,0.1);">Delivery: Cloud-SaaS</small>
+                </div>
             </div>
+
+            <!-- Card 3: Security Consulting -->
             <div class="service-card">
-                <h3>Security Consulting</h3>
-                <p>Auditing and fortifying systems against cyber threats.</p>
-                <small style="color:var(--primary); font-weight:bold; margin-top:10px; display:block;">Delivery: Audit Reports</small>
+                <!-- Ảnh minh họa: Security/Lock -->
+                <img class="service-card-img" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&auto=format&fit=crop" alt="Security Consulting">
+                
+                <div class="service-card-content">
+                    <h3>Security Consulting</h3>
+                    <p style="flex-grow: 1;">Auditing and fortifying systems against cyber threats with advanced encryption and penetration testing.</p>
+                    <small style="color:var(--primary); font-weight:bold; margin-top:15px; display:block; padding-top:15px; border-top:1px solid rgba(255,255,255,0.1);">Delivery: Audit Reports</small>
+                </div>
             </div>
+
         </div>
 
         <!-- 2. USP -->
