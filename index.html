@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Core Systems | Comprehensive Profile</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary: #00d2ff;     /* Xanh Cyan hiện đại */
+            --secondary: #7928ca;   /* Tím Gradient */
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+            --text-white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--dark-bg); color: var(--text-light); line-height: 1.6; scroll-behavior: smooth; }
+
+        /* Navbar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 10%; background: rgba(15, 23, 42, 0.98); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #334155; backdrop-filter: blur(10px); }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a { color: var(--text-light); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.3s; font-weight: 500; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* General Section */
+        section { padding: 60px 10%; border-bottom: 1px solid #1e293b; }
+        h2 { font-size: 2rem; margin-bottom: 10px; color: #fff; display: flex; align-items: center; }
+        h2::before { content: ''; width: 5px; height: 30px; background: var(--primary); margin-right: 15px; }
+        .sub-head { color: var(--text-gray); margin-bottom: 40px; font-style: italic; }
+
+        /* 1. IDENTITY & HERO */
+        .hero { 
+            text-align: center; 
+            padding: 100px 20px; 
+            /* Gradient overlay + Background Image */
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(121, 40, 202, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover; 
+            background-attachment: fixed;
+        }
+        .hero h1 { font-size: 3.5rem; background: -webkit-linear-gradient(var(--primary), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; text-shadow: 0 0 20px rgba(0,210,255,0.3); }
+        .hero-meta { display: inline-flex; gap: 15px; font-size: 0.85rem; color: var(--primary); border: 1px solid var(--primary); padding: 5px 15px; border-radius: 20px; margin-bottom: 20px; background: rgba(0,0,0,0.3); }
+
+        /* CORE VALUES */
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; margin-top: 40px; }
+        .value-box { padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px); }
+        .value-box h4 { color: var(--primary); margin-bottom: 5px; font-size: 1.1rem; }
+
+        /* 2. SERVICES & USP */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .service-card { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid #334155; transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .usp-box { margin-top: 30px; background: linear-gradient(90deg, #1e293b, #0f172a); padding: 20px; border-left: 4px solid var(--secondary); border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+
+        /* 3. HISTORY & MILESTONES */
+        .timeline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+        .milestone { flex: 1; background: var(--card-bg); padding: 20px; border-radius: 10px; position: relative; border-top: 3px solid var(--primary); min-width: 200px; }
+        .milestone h3 { color: #fff; font-size: 1.2rem; }
+        .milestone span { font-weight: bold; color: var(--secondary); display: block; margin-bottom: 5px; font-size: 1.1rem; }
+        .metrics { display: flex; gap: 40px; margin-top: 40px; justify-content: center; flex-wrap: wrap; }
+        .metric-item { text-align: center; }
+        .metric-item strong { font-size: 2.5rem; color: var(--primary); display: block; font-weight: 800; }
+
+        /* 4. TEAM */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .team-card { background: var(--card-bg); padding: 30px; border-radius: 15px; text-align: center; transition: 0.3s; border: 1px solid #334155; height: 100%; display: flex; flex-direction: column; align-items: center; }
+        .team-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .team-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); margin-bottom: 15px; padding: 3px; background: var(--dark-bg); }
+        .team-card h3 { font-size: 1.3rem; margin-bottom: 5px; color: #fff; }
+        .team-card .role { color: var(--secondary); font-weight: bold; font-size: 0.9rem; display: block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .team-card p { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 10px; }
+        .team-card ul { list-style: none; margin-top: auto; width: 100%; border-top: 1px solid #334155; padding-top: 15px; }
+        .team-card ul li { font-size: 0.85rem; margin-bottom: 8px; color: var(--text-light); }
+
+        /* 5. CONTACT & LEGAL */
+        footer { padding: 60px 10%; background: #0b1120; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; font-size: 0.9rem; border-top: 1px solid #334155; }
+        footer h4 { color: #fff; margin-bottom: 20px; border-bottom: 2px solid var(--secondary); display: inline-block; padding-bottom: 5px; font-size: 1.1rem; }
+        .legal-text { color: var(--text-gray); font-size: 0.8rem; margin-top: 10px; }
+        footer p { margin-bottom: 8px; }
+
+        /* --- RESPONSIVE DESIGN (MOBILE) --- */
+        @media (max-width: 768px) {
+            /* Navbar stacks vertically */
+            nav { flex-direction: column; padding: 15px; }
+            .logo { margin-bottom: 15px; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; margin-left: 0; }
+            .nav-links a { margin: 5px 10px; font-size: 0.85rem; }
+
+            /* Adjust Sections Padding */
+            section { padding: 40px 5%; }
+
+            /* Hero Section adjustments */
+            .hero { padding: 60px 15px; }
+            .hero h1 { font-size: 2.2rem; line-height: 1.2; }
+            .hero-meta { font-size: 0.75rem; padding: 4px 10px; }
+            
+            /* Values Grid stacks to 1 column */
+            .values-grid { grid-template-columns: 1fr; gap: 15px; }
+
+            /* Timeline vertical stack */
+            .timeline { flex-direction: column; }
+            .milestone { border-top: none; border-left: 4px solid var(--primary); text-align: left; padding-left: 25px; margin-bottom: 10px; }
+
+            /* Metrics stack */
+            .metrics { flex-direction: column; gap: 20px; }
+            
+            /* Team Grid adjustments */
+            .team-grid { grid-template-columns: 1fr; } /* 1 column for team on mobile */
+            
+            /* Footer center alignment */
+            footer { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Nexus Core.</div>
+        <div class="nav-links">
+            <a href="#identity">Identity</a>
+            <a href="#services">Products</a>
+            <a href="#history">History</a>
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- CHECKPOINT 1: OVERVIEW & IDENTITY -->
+    <section id="identity" class="hero">
+         <!-- 1. Year & Structure -->
+         <div class="hero-meta">Est. 2020 • Limited Liability Company (LLC)</div>
+         
+         <h1>Nexus Core Systems</h1>
+         
+         <!-- 1. Mission & Vision -->
+         <p style="max-width: 700px; margin: 0 auto 30px auto; color: var(--text-white); font-size: 1.1rem;">
+             <strong>Mission:</strong> To provide robust, scalable software solutions that empower businesses to operate seamlessly in the digital age.<br>
+             <strong>Vision:</strong> To become the leading innovator in secure back-end architecture in Southeast Asia by 2030.
+         </p>
+
+         <!-- 1. Core Values -->
+         <div class="values-grid">
+             <div class="value-box">
+                 <h4>Innovation</h4>
+                 <p style="font-size:0.9rem; color: #ddd;">Constantly adopting new tech.</p>
+             </div>
+             <div class="value-box">
+                 <h4>Integrity</h4>
+                 <p style="font-size:0.9rem; color: #ddd;">Transparent code & billing.</p>
+             </div>
+             <div class="value-box">
+                 <h4>Client-Centricity</h4>
+                 <p style="font-size:0.9rem; color: #ddd;">Tailored solutions for you.</p>
+             </div>
+         </div>
+     </section>
+
+    <!-- CHECKPOINT 2: PRODUCTS & SERVICES -->
+    <section id="services">
+        <h2>Our Offerings</h2>
+        <p class="sub-head">Target Audience: Startups, SMEs, and Enterprise Corporations.</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Backend Architecture</h3>
+                <p>High-performance server construction ensuring data stability.</p>
+                <small style="color:var(--primary); font-weight:bold; margin-top:10px; display:block;">Delivery: Agile / DevOps</small>
+            </div>
+            <div class="service-card">
+                <h3>Web App Development</h3>
+                <p>Full-stack web applications tailored to business needs.</p>
+                <small style="color:var(--primary); font-weight:bold; margin-top:10px; display:block;">Delivery: Cloud-SaaS</small>
+            </div>
+            <div class="service-card">
+                <h3>Security Consulting</h3>
+                <p>Auditing and fortifying systems against cyber threats.</p>
+                <small style="color:var(--primary); font-weight:bold; margin-top:10px; display:block;">Delivery: Audit Reports</small>
+            </div>
+        </div>
+
+        <!-- 2. USP -->
+        <div class="usp-box">
+            <strong>Unique Selling Proposition (USP):</strong> 
+            We do not just write code; we engineer <em>stability</em>. Our proprietary "Core-Lock" security protocol ensures your data is 99.9% immune to common breaches, delivered by certified senior engineers.
+        </div>
+    </section>
+
+    <!-- CHECKPOINT 3: HISTORY & MILESTONES -->
+    <section id="history">
+        <h2>Our Journey</h2>
+        <p class="sub-head">From a garage startup to a regional tech partner.</p>
+
+        <div class="timeline">
+            <div class="milestone">
+                <span>2020</span>
+                <h3>Foundation</h3>
+                <p style="font-size:0.9rem">Founded by 3 tech enthusiasts in HCMC.</p>
+            </div>
+            <div class="milestone">
+                <span>2022</span>
+                <h3>Breakthrough</h3>
+                <p style="font-size:0.9rem">Awarded "Best Tech Startup" by City Tech Council.</p>
+            </div>
+            <div class="milestone">
+                <span>2024</span>
+                <h3>Expansion</h3>
+                <p style="font-size:0.9rem">Partnered with 5 Fortune 500 companies.</p>
+            </div>
+        </div>
+
+        <!-- 3. Growth Metrics -->
+        <div class="metrics">
+            <div class="metric-item">
+                <strong>50+</strong>
+                <span>Projects Delivered</span>
+            </div>
+            <div class="metric-item">
+                <strong>1M+</strong>
+                <span>End Users</span>
+            </div>
+            <div class="metric-item">
+                <strong>100%</strong>
+                <span>Client Retention</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHECKPOINT 4: TEAM & MANAGEMENT -->
+    <section id="team">
+        <h2>Leadership Team</h2>
+        <p class="sub-head">Our engineers hold AWS/Google Cloud certifications with 5+ years of experience.</p>
+        
+        <div class="team-grid">
+            <!-- Member 1 -->
+            <div class="team-card" aria-label="Project Manager">
+                <!-- Using placeholder for base64 safety in display, but keeping user intent -->
+                <img src="Không có tiêu đề.jpg" alt="Project Manager">
+                <h3>Trần Tây</h3>
+                <span class="role">Head of Delivery / Project Manager</span>
+                <p>Responsible for managing the project roadmap, facilitating client communication, and ensuring delivery progress in alignment with Agile methodologies.</p>
+                <ul style="text-align:left; margin-top:12px; font-size:0.9rem;">
+                    <li><strong>Experience:</strong> 8+ years in IT project management.</li>
+                    <li><strong>Responsibilities:</strong> Roadmap, Sprint Planning.</li>
+                    <li><strong>Standard KPIs:</strong> On-time delivery ≥ 95%.</li>
+                </ul>
+                <p style="margin-top:10px;">
+                    <a href="mailto:le.thi.b@nexus-core.com" style="color:var(--primary); text-decoration:none;">Email</a> · 
+                    <a href="#" target="_blank" style="color:var(--primary); text-decoration:none;">LinkedIn</a>
+                </p>
+            </div>
+            
+            <!-- Member 2 (YOU) -->
+           <div class="team-card" style="border-color: var(--primary);">
+               <img src="data:image/jpeg;base64,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" alt="Senior Back-End Engineer" aria-label="Senior Back-End Engineer">
+               <h3>Nguyễn Quốc Việt</h3>
+               <span class="role">Senior Back-End Engineer</span>
+               <p>Systems Architect; accountable for API design, database optimization, and security strategy development.</p>
+               <ul style="text-align:left; margin-top:12px; font-size:0.9rem;">
+                   <li><strong>Tech Stack:</strong> Node.js, Go, PostgreSQL, Redis, Docker, Kubernetes.</li>
+                   <li><strong>Responsibilities:</strong> API design, DB optimization.</li>
+                   <li><strong>Certifications:</strong> AWS Certified Solutions Architect.</li>
+               </ul>
+               <p style="margin-top:10px;">
+                   <a href="mailto:vn.a@nexus-core.com" style="color:var(--primary); text-decoration:none;">Email</a> · 
+                   <a href="#" target="_blank" style="color:var(--primary); text-decoration:none;">LinkedIn</a>
+               </p>
+           </div>
+
+            <!-- Member 3 -->
+            <div class="team-card" aria-label="Lead Front-End Developer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs4Dqh4R8yEv_zh5AqAoxXkyk3JrzpAj-hMQ&s" alt="Lead Front-End Developer">
+                <h3>Nguyễn Cường Thịnh</h3>
+                <span class="role">Lead Front-End Developer</span>
+                <p>User Experience specialist with expertise in multi-platform interface optimization.</p>
+                <ul style="text-align:left; margin-top:12px; font-size:0.9rem;">
+                    <li><strong>Tech Stack:</strong> React, TypeScript, Next.js, Tailwind CSS.</li>
+                    <li><strong>Focus:</strong> Accessibility (WCAG), Responsive Design.</li>
+                    <li><strong>Responsibilities:</strong> UI Components, Frontend Arch.</li>
+                </ul>
+                <p style="margin-top:10px;">
+                    <a href="mailto:tm.c@nexus-core.com" style="color:var(--primary); text-decoration:none;">Email</a> · 
+                    <a href="#" target="_blank" style="color:var(--primary); text-decoration:none;">LinkedIn</a>
+                </p>
+            </div>
+    </section>
+
+    <!-- CHECKPOINT 5: CONTACT & LEGAL -->
+    <footer id="contact">
+        <div>
+            <h4>Contact Us</h4> <!-- 5. Contact Details -->
+            <p>Phone: +84 909 123 456</p>
+            <p>Email: business@nexus-core.com</p>
+            <p>Web: www.nexus-core.com</p>
+        </div>
+        <div>
+            <h4>Location</h4> <!-- 5. Address -->
+            <p>Nexus Tower, Room 404</p>
+            <p>High-Tech Park, District 9</p>
+            <p>Ho Chi Minh City, Vietnam</p>
+        </div>
+        <div>
+            <h4>Legal Status</h4> <!-- 5. Reg & Tax ID -->
+            <p>Registered LLC (Limited Liability)</p>
+            <p class="legal-text">Tax ID: 031-999-888</p>
+            <p class="legal-text">Reg No: NX-2020-VN</p>
+        </div>
+    </footer>
+
+</body>
+</html>
