@@ -15,36 +15,144 @@
             --text-gray: #94a3b8;
             --text-white: #ffffff;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 1.2rem; }
         body { background-color: var(--dark-bg); color: var(--text-light); line-height: 1.6; scroll-behavior: smooth; }
 
         /* Navbar */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 10%; background: rgba(15, 23, 42, 0.98); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #334155; backdrop-filter: blur(10px); }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
-        .nav-links a { color: var(--text-light); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.3s; font-weight: 500; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a { color: var(--text-light); text-decoration: none; margin-left: 20px; font-size: 1.1rem; transition: color 0.3s; font-weight: 500; }
         .nav-links a:hover { color: var(--primary); }
 
         /* General Section */
         section { padding: 60px 10%; border-bottom: 1px solid #1e293b; }
-        h2 { font-size: 2rem; margin-bottom: 10px; color: #fff; display: flex; align-items: center; }
+        h2 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; display: flex; align-items: center; }
         h2::before { content: ''; width: 5px; height: 30px; background: var(--primary); margin-right: 15px; }
-        .sub-head { color: var(--text-gray); margin-bottom: 40px; font-style: italic; }
+        .sub-head { color: var(--text-gray); margin-bottom: 40px; font-style: italic; font-size: 1.3rem; }
 
         /* 1. IDENTITY & HERO */
-        .hero { 
-            text-align: center; 
-            padding: 100px 20px; 
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
             /* Gradient overlay + Background Image */
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(92, 49, 136, 0.8)), url('mohammad-rahmani-CDBkMNZmd7o-unsplash.jpg') center/cover; 
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(92, 49, 136, 0.8)), url('mohammad-rahmani-CDBkMNZmd7o-unsplash.jpg') center/cover;
             background-attachment: fixed;
         }
-        .hero h1 { font-size: 3.5rem; background: -webkit-linear-gradient(var(--primary), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; text-shadow: 0 0 20px rgba(0,210,255,0.3); }
-        .hero-meta { display: inline-flex; gap: 15px; font-size: 0.85rem; color: var(--primary); border: 1px solid var(--primary); padding: 5px 15px; border-radius: 20px; margin-bottom: 20px; background: rgba(0,0,0,0.3); }
+        .hero h1 { font-size: 4rem; background: -webkit-linear-gradient(var(--primary), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; text-shadow: 0 0 20px rgba(0,210,255,0.3); }
+        .hero-meta { display: inline-flex; gap: 15px; font-size: 1rem; color: var(--primary); border: 1px solid var(--primary); padding: 5px 15px; border-radius: 20px; margin-bottom: 20px; background: rgba(0,0,0,0.3); }
+
+        /* MISSION & VISION */
+        .mission-vision-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            flex-wrap: wrap;
+        }
+
+        .identity-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 15px;
+            padding: 30px;
+            flex: 1;
+            min-width: 300px;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .identity-section {
+            position: relative;
+            padding: 30px;
+            flex: 1;
+            min-width: 350px;
+            max-width: 550px;
+        }
+
+        .identity-section.mission {
+            margin-right: 20px;
+        }
+
+        .identity-section.vision {
+            margin-left: 20px;
+        }
+
+        .identity-section h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .identity-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .identity-section p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            position: relative;
+            padding: 25px;
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .identity-section p::before {
+            content: '"';
+            font-size: 3rem;
+            color: rgba(0, 210, 255, 0.2);
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-family: serif;
+        }
+
+        .identity-section p::after {
+            content: '"';
+            font-size: 3rem;
+            color: rgba(0, 210, 255, 0.2);
+            position: absolute;
+            bottom: -30px;
+            right: 10px;
+            font-family: serif;
+        }
+
+        .identity-section p strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Decorative elements */
+        .identity-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top left, rgba(0, 210, 255, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom right, rgba(121, 40, 202, 0.1), transparent 40%);
+            border-radius: 15px;
+            z-index: -1;
+            opacity: 0.7;
+        }
 
         /* CORE VALUES */
         .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; margin-top: 40px; }
-        .value-box { padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px); }
-        .value-box h4 { color: var(--primary); margin-bottom: 5px; font-size: 1.1rem; }
+        .value-box { padding: 25px; background: rgba(255,255,255,0.05); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px); }
+        .value-box h4 { color: var(--primary); margin-bottom: 5px; font-size: 1.4rem; }
+        .value-box p { font-size: 1.1rem; color: #ddd; }
 
         /* 2. SERVICES & USP */
          #services {
@@ -53,22 +161,22 @@
         }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         /* Cập nhật lại service-card để chứa ảnh tràn viền */
-        .service-card { 
-            background: rgba(30, 41, 59, 0.85); 
+        .service-card {
+            background: rgba(30, 41, 59, 0.85);
             border-radius: 12px; /* Bo góc tròn hơn chút */
-            border: 1px solid #334155; 
-            transition: transform 0.3s, box-shadow 0.3s; 
-            backdrop-filter: blur(5px); 
+            border: 1px solid #334155;
+            transition: transform 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(5px);
             padding: 0; /* QUAN TRỌNG: Bỏ padding để ảnh tràn ra sát mép */
             overflow: hidden; /* Để ảnh không bị lòi ra khỏi góc bo tròn */
             display: flex;
             flex-direction: column;
         }
-        
-        .service-card:hover { 
-            transform: translateY(-8px); 
-            border-color: var(--primary); 
-            background: rgba(30, 41, 59, 1); 
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            background: rgba(30, 41, 59, 1);
             box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
 
@@ -87,11 +195,28 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .service-card h3 {
             margin-bottom: 10px;
             color: var(--primary);
-            font-size: 1.25rem;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+        }
+
+        .service-card small {
+            font-size: 1rem;
+        }
+
+        .usp-box {
+            background: rgba(255,255,255,0.08);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            border-left: 4px solid var(--primary);
+            font-size: 1.2rem;
         }
         /* 3. HISTORY & MILESTONES */
           #history {
@@ -99,12 +224,14 @@
             background-attachment: fixed;
         }
         .timeline { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-        .milestone { flex: 1; background: var(--card-bg); padding: 20px; border-radius: 10px; position: relative; border-top: 3px solid var(--primary); min-width: 200px; }
-        .milestone h3 { color: #fff; font-size: 1.2rem; }
-        .milestone span { font-weight: bold; color: var(--secondary); display: block; margin-bottom: 5px; font-size: 1.1rem; }
+        .milestone { flex: 1; background: var(--card-bg); padding: 25px; border-radius: 10px; position: relative; border-top: 3px solid var(--primary); min-width: 200px; }
+        .milestone h3 { color: #fff; font-size: 1.4rem; }
+        .milestone span { font-weight: bold; color: var(--secondary); display: block; margin-bottom: 5px; font-size: 1.3rem; }
+        .milestone p { font-size: 1.1rem; }
         .metrics { display: flex; gap: 40px; margin-top: 40px; justify-content: center; flex-wrap: wrap; }
         .metric-item { text-align: center; }
-        .metric-item strong { font-size: 2.5rem; color: var(--primary); display: block; font-weight: 800; }
+        .metric-item strong { font-size: 3rem; color: var(--primary); display: block; font-weight: 800; }
+        .metric-item span { font-size: 1.2rem; }
 
         /* 4. TEAM */
         #team {
@@ -112,19 +239,19 @@
             background-attachment: fixed;
         }
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .team-card { background: var(--card-bg); padding: 30px; border-radius: 15px; text-align: center; transition: 0.3s; border: 1px solid #334155; height: 100%; display: flex; flex-direction: column; align-items: center; }
+        .team-card { background: var(--card-bg); padding: 35px; border-radius: 15px; text-align: center; transition: 0.3s; border: 1px solid #334155; height: 100%; display: flex; flex-direction: column; align-items: center; }
         .team-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
         .team-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); margin-bottom: 15px; padding: 3px; background: var(--dark-bg); }
-        .team-card h3 { font-size: 1.3rem; margin-bottom: 5px; color: #fff; }
-        .team-card .role { color: var(--secondary); font-weight: bold; font-size: 0.9rem; display: block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .team-card p { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 10px; }
+        .team-card h3 { font-size: 1.5rem; margin-bottom: 5px; color: #fff; }
+        .team-card .role { color: var(--secondary); font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .team-card p { font-size: 1.1rem; color: var(--text-gray); margin-bottom: 10px; }
         .team-card ul { list-style: none; margin-top: auto; width: 100%; border-top: 1px solid #334155; padding-top: 15px; }
-        .team-card ul li { font-size: 0.85rem; margin-bottom: 8px; color: var(--text-light); }
+        .team-card ul li { font-size: 1rem; margin-bottom: 8px; color: var(--text-light); }
 
         /* 5. CONTACT & LEGAL */
-        footer { padding: 60px 10%; background: #0b1120; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; font-size: 0.9rem; border-top: 1px solid #334155; }
-        footer h4 { color: #fff; margin-bottom: 20px; border-bottom: 2px solid var(--secondary); display: inline-block; padding-bottom: 5px; font-size: 1.1rem; }
-        .legal-text { color: var(--text-gray); font-size: 0.8rem; margin-top: 10px; }
+        footer { padding: 60px 10%; background: #0b1120; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; font-size: 1.1rem; border-top: 1px solid #334155; }
+        footer h4 { color: #fff; margin-bottom: 20px; border-bottom: 2px solid var(--secondary); display: inline-block; padding-bottom: 5px; font-size: 1.3rem; }
+        .legal-text { color: var(--text-gray); font-size: 1rem; margin-top: 10px; }
         footer p { margin-bottom: 8px; }
 
         /* --- RESPONSIVE DESIGN (MOBILE) --- */
@@ -133,16 +260,36 @@
             nav { flex-direction: column; padding: 15px; }
             .logo { margin-bottom: 15px; }
             .nav-links { display: flex; flex-wrap: wrap; justify-content: center; margin-left: 0; }
-            .nav-links a { margin: 5px 10px; font-size: 0.85rem; }
+            .nav-links a { margin: 5px 10px; font-size: 1rem; }
 
             /* Adjust Sections Padding */
             section { padding: 40px 5%; }
 
             /* Hero Section adjustments */
             .hero { padding: 60px 15px; }
-            .hero h1 { font-size: 2.2rem; line-height: 1.2; }
-            .hero-meta { font-size: 0.75rem; padding: 4px 10px; }
-            
+            .hero h1 { font-size: 2.8rem; line-height: 1.2; }
+            .hero-meta { font-size: 0.9rem; padding: 4px 10px; }
+
+            /* Mission & Vision Container */
+            .mission-vision-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .identity-section {
+                min-width: unset;
+                padding: 20px;
+                margin: 0;
+            }
+
+            .identity-section h3 {
+                font-size: 1.5rem;
+            }
+
+            .identity-section p {
+                font-size: 1.1rem;
+            }
+
             /* Values Grid stacks to 1 column */
             .values-grid { grid-template-columns: 1fr; gap: 15px; }
 
@@ -152,12 +299,28 @@
 
             /* Metrics stack */
             .metrics { flex-direction: column; gap: 20px; }
-            
+
             /* Team Grid adjustments */
-            .team-grid { grid-template-columns: 1fr; } /* 1 column for team on mobile */
-            
+            .team-card p, .team-card ul li {
+                font-size: 1rem;
+            }
+
+            .team-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .team-card .role {
+                font-size: 0.9rem;
+            }
+
             /* Footer center alignment */
             footer { text-align: center; }
+            footer h4 {
+                font-size: 1.1rem;
+            }
+            footer p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -178,28 +341,35 @@
     <section id="identity" class="hero">
          <!-- 1. Year & Structure -->
          <div class="hero-meta">Est. 2020 • Limited Liability Company (LLC)</div>
-         
+
          <h1>Nexus Core Systems</h1>
-         
+
          <!-- 1. Mission & Vision -->
-         <p style="max-width: 700px; margin: 0 auto 30px auto; color: var(--text-white); font-size: 1.1rem;">
-             <strong>Mission:</strong> To provide robust, scalable software solutions that empower businesses to operate seamlessly in the digital age.<br>
-             <strong>Vision:</strong> To become the leading innovator in secure back-end architecture in Southeast Asia by 2030.
-         </p>
+         <div class="mission-vision-container">
+             <div class="identity-section mission">
+                 <h3>OUR MISSION</h3>
+                 <p>To provide <strong>robust, scalable</strong> software solutions that empower businesses to operate seamlessly in the digital age.</p>
+             </div>
+
+             <div class="identity-section vision">
+                 <h3>OUR VISION</h3>
+                 <p>To become the <strong>leading innovator</strong> in secure back-end architecture in Southeast Asia by 2030.</p>
+             </div>
+         </div>
 
          <!-- 1. Core Values -->
          <div class="values-grid">
              <div class="value-box">
                  <h4>Innovation</h4>
-                 <p style="font-size:0.9rem; color: #ddd;">Constantly adopting new tech.</p>
+                 <p>Constantly adopting new tech.</p>
              </div>
              <div class="value-box">
                  <h4>Integrity</h4>
-                 <p style="font-size:0.9rem; color: #ddd;">Transparent code & billing.</p>
+                 <p>Transparent code & billing.</p>
              </div>
              <div class="value-box">
                  <h4>Client-Centricity</h4>
-                 <p style="font-size:0.9rem; color: #ddd;">Tailored solutions for you.</p>
+                 <p>Tailored solutions for you.</p>
              </div>
          </div>
      </section>
@@ -251,7 +421,7 @@
 
         <!-- 2. USP -->
         <div class="usp-box">
-            <strong>Unique Selling Proposition (USP):</strong> 
+            <strong>Unique Selling Proposition (USP):</strong>
             We do not just write code; we engineer <em>stability</em>. Our proprietary "Core-Lock" security protocol ensures your data is 99.9% immune to common breaches, delivered by certified senior engineers.
         </div>
     </section>
@@ -314,8 +484,8 @@
                     <li><strong>Responsibilities:</strong> Roadmap, Sprint Planning.</li>
                     <li><strong>Standard KPIs:</strong> On-time delivery ≥ 95%.</li>
                 </ul>
-                <p style="margin-top:10px;">
-                    <a href="mailto:le.thi.b@nexus-core.com" style="color:var(--primary); text-decoration:none;">Email</a> · 
+                <p style="margin-top:10px; font-size: 1.1rem;">
+                    <a href="mailto:le.thi.b@nexus-core.com" style="color:var(--primary); text-decoration:none;">Email</a> ·
                     <a href="#" target="_blank" style="color:var(--primary); text-decoration:none;">LinkedIn</a>
                 </p>
             </div>
@@ -331,8 +501,8 @@
                    <li><strong>Responsibilities:</strong> API design, DB optimization.</li>
                    <li><strong>Certifications:</strong> AWS Certified Solutions Architect.</li>
                </ul>
-               <p style="margin-top:10px;">
-                   <a href="mailto:vn.a@nexus-core.com" style="color:var(--primary); text-decoration:none;">Email</a> · 
+               <p style="margin-top:10px; font-size: 1.1rem;">
+                   <a href="mailto:vn.a@nexus-core.com" style="color:var(--primary); text-decoration:none;">Email</a> ·
                    <a href="#" target="_blank" style="color:var(--primary); text-decoration:none;">LinkedIn</a>
                </p>
            </div>
@@ -348,8 +518,8 @@
                     <li><strong>Focus:</strong> Accessibility (WCAG), Responsive Design.</li>
                     <li><strong>Responsibilities:</strong> UI Components, Frontend Arch.</li>
                 </ul>
-                <p style="margin-top:10px;">
-                    <a href="mailto:tm.c@nexus-core.com" style="color:var(--primary); text-decoration:none;">Email</a> · 
+                <p style="margin-top:10px; font-size: 1.1rem;">
+                    <a href="mailto:tm.c@nexus-core.com" style="color:var(--primary); text-decoration:none;">Email</a> ·
                     <a href="#" target="_blank" style="color:var(--primary); text-decoration:none;">LinkedIn</a>
                 </p>
             </div>
